@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Historia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="hearts-canvas" aria-hidden="true"></canvas>
+    <div class="page-glow glow-left"></div>
+    <div class="page-glow glow-right"></div>
+
+    <main class="experience-shell">
+        <section class="panel panel-active panel-center" id="mystery-screen">
+            <div class="panel-content compact">
+                <h1>Posso te mostrar uma coisa?</h1>
+                <div class="choice-row" id="mystery-choice-row">
+                    <button class="primary-btn" data-next="world-screen">Sim</button>
+                    <button class="ghost-btn runaway-btn" id="no-button" type="button">Não</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-grayscale" id="world-screen" aria-hidden="true">
+            <div class="panel-content compact">
+                <h2 class="typewriter-copy" id="world-title" data-type-text="Tudo parecia funcionar. Mas faltava cor."></h2>
+                <p class="lead typewriter-copy" id="world-lead" data-type-text="Antes de você, os dias passavam. Depois, eles começaram a acontecer."></p>
+                <button class="ghost-btn world-continue-btn" id="world-continue-button" data-next="intro-screen">Continuar</button>
+            </div>
+        </section>
+
+        <section class="panel panel-cinema" id="intro-screen" aria-hidden="true">
+            <div class="panel-content compact intro-stack">
+                <span class="intro-line reveal">Apresentando...</span>
+                <h2 class="reveal delay-1">A melhor história que já me aconteceu</h2>
+                <p class="lead reveal delay-2">Uma produção original feita de carinho e risadas.</p>
+                <button class="primary-btn reveal delay-3" data-next="catalog-screen">Assistir</button>
+            </div>
+        </section>
+
+        <section class="panel panel-streaming" id="catalog-screen" aria-hidden="true">
+            <div class="panel-content streaming-shell">
+                <div class="streaming-nav">
+                    <div class="streaming-brand-group">
+                        <span class="streaming-brand">N</span>
+                        <nav class="streaming-menu" aria-label="Categorias do catalogo">
+                            <span>Inicio</span>
+                            <span>Séries</span>
+                            <span>Filmes</span>
+                            <span>Minha lista</span>
+                        </nav>
+                    </div>
+                    <div class="streaming-actions-meta">
+                        <span>Para você</span>
+                        <span>Romance premium</span>
+                    </div>
+                </div>
+
+                <article class="streaming-hero" style="--streaming-hero-image: url('./images/banner-catalogo.jpg');">
+                    <div class="streaming-hero-copy">
+                        <p class="streaming-kicker">Em cartaz agora</p>
+                        <h2>NOSSA HISTÓRIA</h2>
+                        <p class="streaming-subtitle">Romance / Comédia </p>
+                        <p class="streaming-description">Uma história sobre duas pessoas que se encontraram sem planejar e, aos poucos, fizeram tudo ao redor mudar.</p>
+                        <div class="streaming-cta-row">
+                            <button class="streaming-play-btn" data-next="player-screen" id="watch-now" type="button">Assistir</button>
+                            <button class="streaming-info-btn" type="button">Mais informações</button>
+                        </div>
+                    </div>
+                    <div class="streaming-rating">12</div>
+                </article>
+
+                <section class="streaming-row-block" aria-label="Titulos em destaque">
+                    <div class="streaming-row-header">
+                        <h3>Populares no nosso streaming</h3>
+                        <span>Porque tudo ficou melhor depois de você</span>
+                    </div>
+                    <div class="streaming-row-grid">
+                        <article class="streaming-card is-featured">
+                            <span class="streaming-card-top">Top 1</span>
+                            <strong>NOSSO FILME</strong>
+                            <p>Não foi perfeito, mas foi o mais verdadeiro que eu já vivi.</p>
+                        </article>
+                        <article class="streaming-card">
+                            <span class="streaming-card-top">Memória 1</span>
+                            <strong>O começo</strong>
+                            <p>Onde tudo começou de forma inesperada.</p>
+                        </article>
+                        <article class="streaming-card">
+                            <span class="streaming-card-top">Memoria 2</span>
+                            <strong>Reencontro</strong>
+                            <p>Quando a gente se encontrou de novo, parecia que nada tinha se perdido.</p>
+                        </article>
+                        <article class="streaming-card">
+                            <span class="streaming-card-top">Memoria 3</span>
+                            <strong>Momentos especiais</strong>
+                            <p>Foram os momentos mais simples que significaram tudo pra mim.</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="panel panel-player" id="player-screen" aria-hidden="true">
+            <div class="panel-content player-layout full-player-shell">
+                <div class="player-header">
+                    <div>
+                        <p class="eyebrow">Assistindo agora</p>
+                        <h2>Nosso filme</h2>
+                    </div>
+                    <button class="music-btn" id="music-toggle" type="button">Ativar trilha sonora</button>
+                </div>
+
+                <div class="player-frame">
+                    <div class="cinema-stage" id="scene-stage">
+                        <div class="scene-backdrop"></div>
+                        <div class="scene-photo-layer" id="scene-photo-layer" aria-hidden="true"></div>
+                        <div class="scene-photo-layer" id="scene-photo-layer-alt" aria-hidden="true"></div>
+                        <div class="scene-overlay"></div>
+                        <div class="pause-overlay" id="pause-overlay" aria-hidden="true">
+                            <div class="pause-icon" aria-label="Filme pausado">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="scene-copy">
+                            <p class="scene-tag" id="scene-tag">Abertura</p>
+                            <h3 id="scene-title">Em um dia completamente normal...</h3>
+                            <p id="scene-text">Duas vidas estavam prestes a mudar.</p>
+                        </div>
+                    </div>
+
+                    <div class="player-controls">
+                        <div class="controls-left">
+                            <button class="control-btn play-btn" id="play-pause" type="button">Play</button>
+                            <span class="player-badge">Original</span>
+                        </div>
+                        <div class="progress-wrap" aria-label="Progresso do filme">
+                            <div class="progress-track">
+                                <div class="progress-bar" id="progress-bar"></div>
+                            </div>
+                            <div class="time-row">
+                                <span id="current-time">00:00</span>
+                                <span id="total-time">01:08</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-finale" id="finale-screen" aria-hidden="true">
+            <div class="panel-content compact final-copy">
+                <h2>Se a vida fosse um filme...</h2>
+                <h3>Você seria minha cena favorita.</h3>
+            </div>
+        </section>
+
+        <section class="panel panel-postcredits" id="postcredits-screen" aria-hidden="true">
+            <div class="panel-content compact">
+                <div class="detail-header detail-header-compact">
+                    <div>
+                        <h2>Mas nossa história ainda não terminou...</h2>
+                    </div>
+                    <button class="ghost-btn" data-next="finale-screen" type="button">Rever final</button>
+                </div>
+                <div class="sequence-actions">
+                    <button class="primary-btn" data-next="gallery-screen" type="button">Continuar assistindo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-postcredits" id="gallery-screen" aria-hidden="true">
+            <div class="panel-content wide">
+                <div class="detail-header">
+                    <div>
+                        <p class="eyebrow">Capítulo 1</p>
+                        <h2>Galeria de fotos</h2>
+                    </div>
+                    <span class="sequence-step">1 de 3</span>
+                </div>
+                <section class="info-card gallery-card">
+                    <div class="gallery-grid">
+                        <figure class="photo-card accent-one">
+                            <div class="photo-placeholder" id="gallery-photo-1">Foto 1</div>
+                            <figcaption id="gallery-caption-1">Foto 1</figcaption>
+                        </figure>
+                        <figure class="photo-card accent-two">
+                            <div class="photo-placeholder" id="gallery-photo-2">Foto 2</div>
+                            <figcaption id="gallery-caption-2">Foto 2</figcaption>
+                        </figure>
+                        <figure class="photo-card accent-three">
+                            <div class="photo-placeholder" id="gallery-photo-3">Foto 3</div>
+                            <figcaption id="gallery-caption-3">Foto 3</figcaption>
+                        </figure>
+                        <figure class="photo-card accent-four">
+                            <div class="photo-placeholder" id="gallery-photo-4">Foto 4</div>
+                            <figcaption id="gallery-caption-4">Foto 4</figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <div class="sequence-nav">
+                    <button class="ghost-btn" data-next="postcredits-screen" type="button">Anterior</button>
+                    <button class="primary-btn" data-next="counter-screen" type="button">Proximo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-postcredits" id="counter-screen" aria-hidden="true">
+            <div class="panel-content compact">
+                <div class="detail-header detail-header-compact">
+                    <div>
+                        <p class="eyebrow">Capítulo 2</p>
+                        <h2>Tempo juntos</h2>
+                    </div>
+                    <span class="sequence-step">2 de 3</span>
+                </div>
+                <section class="info-card counter-card">
+                    <p class="counter-text">Estamos juntos há:</p>
+                    <div class="counter-grid">
+                        <div class="counter-box">
+                            <strong id="days">0</strong>
+                            <span>dias</span>
+                        </div>
+                        <div class="counter-box">
+                            <strong id="hours">0</strong>
+                            <span>horas</span>
+                        </div>
+                        <div class="counter-box">
+                            <strong id="minutes">0</strong>
+                            <span>minutos</span>
+                        </div>
+                        <div class="counter-box">
+                            <strong id="seconds">0</strong>
+                            <span>segundos</span>
+                        </div>
+                    </div>
+                    <p class="counter-note" id="since-date">Contando desde o nosso começo.</p>
+                </section>
+                <div class="sequence-nav">
+                    <button class="ghost-btn" data-next="gallery-screen" type="button">Anterior</button>
+                    <button class="primary-btn" data-next="surprise-screen" type="button">Proximo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-postcredits" id="surprise-screen" aria-hidden="true">
+            <div class="panel-content compact">
+                <div class="detail-header detail-header-compact">
+                    <div>
+                        <p class="eyebrow">Capítulo 3</p>
+                        <h2>Eu te amo</h2>
+                    </div>
+                    <span class="sequence-step">3 de 3</span>
+                </div>
+                <section class="info-card surprise-card">
+                    <h3>Feliz nosso dia!</h3>
+                </section>
+                <div class="sequence-nav">
+                    <button class="ghost-btn" data-next="counter-screen" type="button">Anterior</button>
+                    <button class="primary-btn" data-next="finale-screen" type="button">Rever final</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <audio id="our-song" preload="auto"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/background-animation.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
