@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     totalTimeLabel.textContent = toClock(totalDurationInSeconds);
     renderGallery();
     setScene(0);
+
     updateCounter();
     counterTimer = setInterval(updateCounter, 1000);
 
@@ -593,9 +594,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 caption.textContent = item.caption || item.label || `Foto ${index + 1}`;
             }
 
+            photo.innerHTML = "";
+
             if (item.image) {
-                photo.style.backgroundImage = `linear-gradient(rgba(8, 11, 18, 0.18), rgba(8, 11, 18, 0.42)), url("${item.image}")`;
-                photo.textContent = "";
+                const image = document.createElement("img");
+                image.className = "gallery-photo-image";
+                image.src = item.image;
+                image.alt = item.caption || item.label || `Foto ${index + 1}`;
+                photo.appendChild(image);
             } else {
                 photo.textContent = item.label;
             }

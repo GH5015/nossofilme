@@ -1226,6 +1226,7 @@ h3 {
 .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
+    align-items: start;
 }
 
 .photo-card {
@@ -1238,7 +1239,7 @@ h3 {
     aspect-ratio: 4 / 5;
     display: grid;
     place-items: center;
-    padding: 1.2rem;
+    padding: 0.9rem;
     border-radius: var(--radius-sm);
     font-family: "Fraunces", serif;
     font-size: 2rem;
@@ -1252,6 +1253,15 @@ h3 {
     box-shadow:
         0 18px 34px rgba(0, 0, 0, 0.18),
         inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.gallery-photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: calc(var(--radius-sm) - 0.2rem);
 }
 
 .accent-one .photo-placeholder {
@@ -1275,6 +1285,13 @@ h3 {
     line-height: 1.65;
     font-style: italic;
     text-align: center;
+}
+
+#gallery-screen .gallery-card,
+#counter-screen .counter-card,
+#surprise-screen .surprise-card {
+    display: grid;
+    justify-items: center;
 }
 
 .counter-grid {
