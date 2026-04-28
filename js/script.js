@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 tag: "Intervalo",
                 title: "Mas nem toda cena bonita fica leve o tempo inteiro",
-                text: "Teve um momento em que a distância apareceu, e o silêncio pareceu maior do que qualquer palavra que a gente queria dizer.",
+                text: "E, no silêncio, ficou tudo aquilo que a gente não conseguiu dizer, mesmo querendo.",
                 background: "radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 24%), linear-gradient(135deg, rgba(73,87,131,0.18), rgba(33,37,58,0.24)), linear-gradient(180deg, rgba(10,12,20,0.52), rgba(3,4,8,0.94))",
                 duration: 11,
                 pausedMoment: {
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 tag: "Memórias",
                 title: "As lembranças começaram a ganhar cor",
-                text: "As conversas ficaram mais leves, os dias mais bonitos e cada detalhe passou a ter um significado novo.",
+                text: "As conversas ficaram mais leves, os dias mais bonitos e a gente começou a transformar momentos simples em algo que valia a pena guardar.",
                 background: "radial-gradient(circle at right top, rgba(122,166,255,0.18), transparent 26%), linear-gradient(135deg, rgba(97,80,229,0.24), rgba(255,122,144,0.2)), linear-gradient(180deg, rgba(14,18,33,0.36), rgba(4,5,10,0.9))",
                 image: "",
                 images: ["./images/foto5.jpeg","./images/foto6.jpeg"],
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 tag: "Momentos especiais",
                 title: "Pequenos momentos viraram cenas favoritas",
-                text: "Risos, abraços, olhares e todos aqueles segundos simples que, de algum jeito, ficaram gigantes dentro de mim.",
+                text: "Risos, abraços, olhares e todos aqueles segundos que ficaram grandes o suficiente pra não ir embora nunca mais.",
                 background: "radial-gradient(circle at center, rgba(242,201,138,0.16), transparent 24%), linear-gradient(135deg, rgba(255,122,144,0.26), rgba(50,86,151,0.22)), linear-gradient(180deg, rgba(13,17,29,0.34), rgba(3,5,10,0.92))",
                 image: "",
                 images: ["./images/foto7.jpeg","./images/foto8.jpeg","./images/foto9.jpeg"],

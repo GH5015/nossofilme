@@ -16,6 +16,12 @@
     --radius-sm: 16px;
 }
 
+@media (pointer: coarse) {
+    html {
+        font-size: 122%;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -209,7 +215,7 @@ button {
 #mystery-screen .lead,
 #world-screen .lead {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem);
     letter-spacing: 0.01em;
     color: rgba(245, 239, 230, 0.72);
 }
@@ -254,17 +260,17 @@ h3 {
 }
 
 h1 {
-    font-size: clamp(3rem, 9vw, 5.8rem);
+    font-size: clamp(4.2rem, 10.4vw, 7.4rem);
     margin-bottom: 1.25rem;
 }
 
 h2 {
-    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    font-size: clamp(3.8rem, 8.2vw, 6.5rem);
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
 }
 
 .lead,
@@ -276,7 +282,7 @@ h3 {
 .surprise-card p {
     color: var(--muted);
     line-height: 1.82;
-    font-size: 1.02rem;
+    font-size: 1.38rem;
 }
 
 .primary-btn,
@@ -606,14 +612,14 @@ h3 {
 .streaming-hero h2 {
     margin: 0;
     color: #fff;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(3.5rem, 6.8vw, 5.8rem);
     line-height: 0.9;
     text-shadow: 0 12px 40px rgba(0, 0, 0, 0.36);
 }
 
 .streaming-subtitle {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
+    font-size: 1.34rem;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
@@ -622,6 +628,7 @@ h3 {
     max-width: 34rem;
     color: rgba(255, 255, 255, 0.84);
     line-height: 1.72;
+    font-size: 1.3rem;
 }
 
 .streaming-cta-row {
@@ -686,14 +693,14 @@ h3 {
     margin: 0;
     color: #fff;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.05rem;
     font-weight: 800;
     letter-spacing: -0.03em;
 }
 
 .streaming-row-header span {
     color: rgba(255, 255, 255, 0.62);
-    font-size: 0.94rem;
+    font-size: 1.06rem;
 }
 
 .streaming-row-grid {
@@ -752,7 +759,7 @@ h3 {
 
 .streaming-card strong {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.72rem;
     font-family: "Fraunces", serif;
     line-height: 1;
 }
@@ -760,7 +767,7 @@ h3 {
 .streaming-card p {
     color: rgba(255, 255, 255, 0.76);
     line-height: 1.55;
-    font-size: 0.92rem;
+    font-size: 1.18rem;
 }
 
 .streaming-card.is-featured {
@@ -1285,13 +1292,134 @@ h3 {
     line-height: 1.65;
     font-style: italic;
     text-align: center;
+    font-size: 1.12rem;
+}
+
+#gallery-screen .panel-content,
+#counter-screen .panel-content,
+#surprise-screen .panel-content {
+    display: grid;
+    gap: 1.75rem;
+}
+
+#gallery-screen .detail-header,
+#counter-screen .detail-header,
+#surprise-screen .detail-header {
+    align-items: end;
+    gap: 1.25rem;
+    margin-bottom: 0;
+}
+
+#gallery-screen .detail-header > div,
+#counter-screen .detail-header > div,
+#surprise-screen .detail-header > div {
+    max-width: 32rem;
+}
+
+#gallery-screen .detail-header h2,
+#counter-screen .detail-header h2,
+#surprise-screen .detail-header h2 {
+    margin-bottom: 0;
+}
+
+#gallery-screen .sequence-step,
+#counter-screen .sequence-step,
+#surprise-screen .sequence-step {
+    min-width: 5.5rem;
+    text-align: right;
 }
 
 #gallery-screen .gallery-card,
 #counter-screen .counter-card,
 #surprise-screen .surprise-card {
     display: grid;
+    justify-items: stretch;
+    gap: 1.15rem;
+}
+
+#gallery-screen .gallery-card,
+#counter-screen .counter-card {
+    padding: 1.75rem;
+}
+
+#gallery-screen .gallery-card {
+    gap: 1.4rem;
+}
+
+#gallery-screen .photo-card {
+    align-content: start;
+}
+
+#gallery-screen .photo-card figcaption {
+    max-width: 26ch;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#counter-screen .counter-card {
+    text-align: center;
+}
+
+#counter-screen .counter-text {
+    font-size: 1.08rem;
+    line-height: 1.6;
+}
+
+#counter-screen .counter-note {
+    max-width: 34ch;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#surprise-screen .surprise-card {
+    position: relative;
+    padding: clamp(2.4rem, 5vw, 3.6rem);
+    text-align: center;
     justify-items: center;
+    gap: 1.1rem;
+    border: 1px solid rgba(243, 210, 155, 0.16);
+    background:
+        radial-gradient(circle at top, rgba(243, 210, 155, 0.12), transparent 30%),
+        radial-gradient(circle at bottom, rgba(199, 106, 127, 0.16), transparent 34%),
+        linear-gradient(180deg, rgba(39, 20, 30, 0.92), rgba(16, 10, 16, 0.96));
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+#surprise-screen .surprise-card h3 {
+    max-width: 10ch;
+    margin: 0 auto;
+    font-size: clamp(3.2rem, 6vw, 5.3rem);
+    line-height: 0.96;
+    color: #ffd7df;
+    text-shadow:
+        0 14px 34px rgba(124, 36, 59, 0.26),
+        0 0 24px rgba(243, 210, 155, 0.08);
+}
+
+#surprise-screen .surprise-card p {
+    max-width: 30ch;
+    margin: 0 auto;
+    color: rgba(255, 241, 231, 0.82);
+    font-size: 1.16rem;
+    line-height: 1.9;
+}
+
+.surprise-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(243, 210, 155, 0.18);
+    background: rgba(243, 210, 155, 0.06);
+    color: #f7dfb5;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
 
 .counter-grid {
@@ -1621,11 +1749,11 @@ h3 {
     }
 
     .streaming-row-header h3 {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
     }
 
     .streaming-row-header span {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 
     .streaming-card {
@@ -1655,8 +1783,8 @@ h3 {
     .counter-note,
     .letter-card p,
     .surprise-card p {
-        font-size: 0.98rem;
-        line-height: 1.7;
+        font-size: 1.08rem;
+        line-height: 1.72;
     }
 
     .scene-photo-layer {
@@ -1700,7 +1828,7 @@ h3 {
     }
 
     .time-row {
-        font-size: 0.82rem;
+        font-size: 0.92rem;
         margin-top: 0.45rem;
     }
 
@@ -1728,28 +1856,28 @@ h3 {
     }
 
     .sequence-step {
-        font-size: 0.72rem;
+        font-size: 0.82rem;
         letter-spacing: 0.12em;
     }
 
     #mystery-screen h1,
     #world-screen h2 {
-        font-size: clamp(2.7rem, 12vw, 4.2rem);
+        font-size: clamp(3rem, 12vw, 4.5rem);
     }
 
     #mystery-screen .lead,
     #world-screen .lead {
-        font-size: 1.02rem;
+        font-size: 1.14rem;
     }
 
     #intro-screen h2,
     #finale-screen h2 {
-        font-size: clamp(2.4rem, 11vw, 4rem);
+        font-size: clamp(2.7rem, 11vw, 4.2rem);
     }
 
     #finale-screen h3,
     .surprise-card h3 {
-        font-size: clamp(2.2rem, 10vw, 3.4rem);
+        font-size: clamp(2.4rem, 10vw, 3.7rem);
     }
 }
 
@@ -1791,5 +1919,32 @@ h3 {
     .sequence-step,
     .chapter-label {
         letter-spacing: 0.1em;
+    }
+
+    .lead,
+    .feature-copy p,
+    .scene-copy p,
+    .counter-text,
+    .counter-note,
+    .letter-card p,
+    .surprise-card p,
+    .photo-card figcaption {
+        font-size: 1.04rem;
+        line-height: 1.68;
+    }
+
+    #mystery-screen h1,
+    #world-screen h2 {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+    }
+
+    #intro-screen h2,
+    #finale-screen h2 {
+        font-size: clamp(2.55rem, 12vw, 3.75rem);
+    }
+
+    #finale-screen h3,
+    .surprise-card h3 {
+        font-size: clamp(2.3rem, 11vw, 3.35rem);
     }
 }
